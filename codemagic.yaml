@@ -13,7 +13,8 @@ workflows:
         script: |
           npx expo prebuild --platform android --no-install
           cd android
-          ./gradlew assembleRelease
+          echo "android.defaults.buildfeatures.buildconfig=true" >> local.properties
+          ./gradlew assembleRelease -x lint
     artifacts:
       - android/app/build/outputs/apk/release/*.apk
       
