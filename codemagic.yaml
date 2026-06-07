@@ -11,7 +11,7 @@ workflows:
           npm install --legacy-peer-deps
       - name: Expo Prebuild and Build APK
         script: |
-          npx expo prebuild --platform android --skip-dependency-validation
+          npx expo prebuild --platform android --no-install
           cd android
           ./gradlew assembleRelease
     artifacts:
