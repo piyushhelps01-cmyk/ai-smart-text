@@ -9,10 +9,12 @@ workflows:
       - name: Install dependencies
         script: |
           npm install --legacy-peer-deps
-      - name: Expo Prebuild and Build APK
+      - name: Expo Prebuild and Force BuildConfig
         script: |
           npx expo prebuild --platform android --no-install
           cd android
+          echo "android.buildFeatures.buildConfig = true" >> app/build.gradle
+          ./gradlew clean
           ./gradlew assembleRelease -x lint
     artifacts:
       - android/app/build/outputs/apk/release/*.apk
