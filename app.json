@@ -30,8 +30,8 @@
         "expo-build-properties",
         {
           "android": {
-            "packagingOptions": {
-              "pickFirst": ["**/BuildConfig.js"]
+            "buildFeatures": {
+              "buildConfig": true
             }
           }
         }
