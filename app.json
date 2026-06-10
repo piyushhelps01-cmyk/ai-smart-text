@@ -25,17 +25,7 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
-      "expo-router",
-      [
-        "expo-build-properties",
-        {
-          "android": {
-            "buildFeatures": {
-              "buildConfig": true
-            }
-          }
-        }
-      ]
+      "expo-router"
     ]
   }
 }
